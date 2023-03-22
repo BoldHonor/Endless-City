@@ -33,6 +33,8 @@ THREE.MapControls = function (object, domElement) {
   // How far you can zoom in and out ( OrthographicCamera only )
   this.minZoom = 3;
   this.maxZoom = Infinity;
+  this.object.zoom =this.minZoom;
+  this.object.updateProjectionMatrix();
 
   // How far you can orbit vertically, upper and lower limits.
   // Range is 0 to Math.PI radians.
