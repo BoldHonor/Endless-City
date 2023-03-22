@@ -136,19 +136,21 @@ function initCity() {
     scene.fog = new THREE.Fog(new THREE.Color(0x000000), 200, 300)
 
     // Camera settings
-    camera  = new THREE.PerspectiveCamera(
-        40,
-        window.innerWidth / window.innerHeight,
-        50,
-        200
-    )
+    // camera  = new THREE.PerspectiveCamera(
+    //     40,
+    //     window.innerWidth / window.innerHeight,
+    //     50,
+    //     200
+    // )
+     camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 1, 1000 );
+    
     camera.position.set(10, 100, 10)
     controls = new THREE.MapControls(camera)
 
     // Lights
     light = new THREE.DirectionalLight(0x9a9a9a, 1)
     light.position.set(-300, 750, -300)
-    light.castShadow = true
+    light.castShadow = false
     light.shadow.mapSize.width = light.shadow.mapSize.height = 4096
     light.shadow.camera.near = 1
     light.shadow.camera.far = 1000
