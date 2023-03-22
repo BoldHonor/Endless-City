@@ -136,12 +136,7 @@ function initCity() {
     scene.fog = new THREE.Fog(new THREE.Color(0x000000), 200, 300)
 
     // Camera settings
-    camera = new THREE.PerspectiveCamera(
-        40,
-        window.innerWidth / window.innerHeight,
-        50,
-        200
-    )
+    camera  = new THREE.OrthographicCamera( width / - 2, width / 2, height / 2, height / - 2, 1, 1000 );
     camera.position.set(10, 100, 10)
     controls = new THREE.MapControls(camera)
 
