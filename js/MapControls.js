@@ -31,8 +31,10 @@ THREE.MapControls = function (object, domElement) {
   this.maxDistance = 125;
 
   // How far you can zoom in and out ( OrthographicCamera only )
-  this.minZoom = 0;
+  this.minZoom = 3;
   this.maxZoom = Infinity;
+  this.object.zoom =this.minZoom;
+  this.object.updateProjectionMatrix();
 
   // How far you can orbit vertically, upper and lower limits.
   // Range is 0 to Math.PI radians.
@@ -51,7 +53,7 @@ THREE.MapControls = function (object, domElement) {
 
   // This option actually enables dollying in and out; left as "zoom" for backwards compatibility.
   // Set to false to disable zooming
-  this.enableZoom = false;
+  this.enableZoom = true;
   this.zoomSpeed = 1.0;
 
   // Set to false to disable rotating
